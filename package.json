@@ -34,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TODO/dsh-safety-restart.git"
+    "url": "git+https://github.com/zw8519807/MT-dsh-safety-restart.git"
   },
   "bugs": {
-    "url": "https://github.com/TODO/dsh-safety-restart/issues"
+    "url": "https://github.com/zw8519807/MT-dsh-safety-restart/issues"
   },
-  "homepage": "https://github.com/TODO/dsh-safety-restart#readme",
+  "homepage": "https://github.com/zw8519807/MT-dsh-safety-restart#readme",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
