@@ -1,0 +1,9 @@
+# dsh-safety-restart 的 bundle patch：把自己挂进 profile 的插件树。
+#
+# 只有一行 —— 本插件没有任何需要插入的兄弟行、也不改别人的配置。
+# 之所以仍然需要这个文件：DSH 只加载 `dsh.profile.bundles` 里列出的包，
+# 而每个包**必须**声明 `dsh.bundle.patch` 才能作为 bundle 被装配
+# （只声明 `dsh.client` 是注册表最常见的拒收原因之一）。
+- insert:
+    - id: dsh-safety-restart
+      name: 'dsh-safety-restart'

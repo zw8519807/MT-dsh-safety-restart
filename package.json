@@ -1,0 +1,62 @@
+{
+  "name": "dsh-safety-restart",
+  "version": "0.2.1",
+  "description": "DSH 的安全无感重启：agent 可以自己重启宿主并接着干，但重启前必须过四道闸（重启循环熔断、有别的会话在跑就拒绝、profile bundle 解析不了就拒绝、安排不出可靠的拉起手段就拒绝），重启后原会话自动接续。桌面端优先 Electron app.relaunch()，不可达时由一次性 helper 阶梯关停并按同一命令行拉起；web/CLI 端走 detached helper + 端口健康检查。",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "client",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "restart",
+    "relaunch",
+    "safety",
+    "resume",
+    "deepseek-harness"
+  ],
+  "author": {
+    "name": "dsh-safety-restart contributors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TODO/dsh-safety-restart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TODO/dsh-safety-restart/issues"
+  },
+  "homepage": "https://github.com/TODO/dsh-safety-restart#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6 <0.3.0",
+    "@deepseek-ai/dsh-llm": ">=0.1.0-rc.6 <0.3.0"
+  },
+  "scripts": {
+    "verify": "node scripts/verify-core.mjs",
+    "verify:all": "node scripts/run-all.mjs"
+  }
+}
