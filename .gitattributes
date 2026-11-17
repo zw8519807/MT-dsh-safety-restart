@@ -1,0 +1,8 @@
+# Normalize line endings: LF in repo, LF on checkout (cross-platform source)
+* text=auto eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.png binary
